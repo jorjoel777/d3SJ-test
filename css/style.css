@@ -41,9 +41,20 @@ h2{
 }
 
 .centerTitle{
-  color:#a3a3a3;
+  /*color:#a3a3a3;
   text-transform: uppercase;
-  font-size: 26px;
+  font-size: 26px;*/    
+    color: grey;
+    text-transform: uppercase;
+    font-size: 34px;
+    font-stretch: condensed;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    width: 535px;
+    top: 93px;
+
+
 }
 
 #legend{
@@ -99,6 +110,10 @@ h2{
 .totalPie {
     font-size: 50px;
     font-stretch: semi-expanded;
+    position: absolute;
+    text-align: center;
+    width: 535px;
+    top: 132px;
 }
 
 .bgChart{
