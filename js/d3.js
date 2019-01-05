@@ -1,19 +1,24 @@
+  d3.json("donutCharts.json", function(data) {
+    console.log(data[0]);
+  });    
+
     var data = [
       {name: 'smartphone', count: 80000, percentage: 40, color: '#3c671b'},
       {name: 'tablet', count: 120000, percentage: 60, color: '#8ad53f'},
  
     //  {name: 'revenue', count: 200000, background}
     ]; 
-var innerData = [
-{count: 500, percentage: 1, color: '#a3a3a3'},
-{count: 50000, percentage: 25, color: '#fff'},
-{count: 500, percentage: 1, color: '#a3a3a3'},
-{count: 50000, percentage: 25, color: '#fff'},
-{count: 500, percentage: 1, color: '#a3a3a3'},
-{count: 50000, percentage: 25, color: '#fff'},
-{count: 500, percentage: 1, color: '#a3a3a3'},
-{count: 50000, percentage: 25, color: '#fff'},
-];
+    
+    var innerData = [
+      {count: 500, percentage: 1, color: '#a3a3a3'},
+      {count: 50000, percentage: 25, color: '#fff'},
+      {count: 500, percentage: 1, color: '#a3a3a3'},
+      {count: 50000, percentage: 25, color: '#fff'},
+      {count: 500, percentage: 1, color: '#a3a3a3'},
+      {count: 50000, percentage: 25, color: '#fff'},
+      {count: 500, percentage: 1, color: '#a3a3a3'},
+      {count: 50000, percentage: 25, color: '#fff'},
+    ];
     var totalCountName = "revenue"; //Total Count per each Chart
     var totalCount = 0;    // equals 0 then we calculate total below
 
