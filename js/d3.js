@@ -4,11 +4,25 @@
  
     //  {name: 'revenue', count: 200000, background}
     ]; 
-
+var innerData = [
+{count: 500, percentage: 1, color: '#a3a3a3'},
+{count: 50000, percentage: 25, color: '#fff'},
+{count: 500, percentage: 1, color: '#a3a3a3'},
+{count: 50000, percentage: 25, color: '#fff'},
+{count: 500, percentage: 1, color: '#a3a3a3'},
+{count: 50000, percentage: 25, color: '#fff'},
+{count: 500, percentage: 1, color: '#a3a3a3'},
+{count: 50000, percentage: 25, color: '#fff'},
+];
     var totalCountName = "revenue"; //Total Count per each Chart
-    var totalCount = 200000;		//calculates total
-    var totalCountBG = "img/bgChart1.jpg";    //settingBG per each Chart
+    var totalCount = 0;    // equals 0 then we calculate total below
 
+    data.forEach(function(d){
+        totalCount+= d.count; // we calculate the sum of the value for d.count
+    });
+
+    var totalCountBG = "img/bgChart1.jpg";    //settingBG per each Chart
+//alert(totalCount);
     var width = 535,
     height = 320,
     radius = 146;
@@ -16,6 +30,10 @@
 		var arc = d3.arc()
     	.outerRadius(radius -1)
     	.innerRadius(160 );
+
+    var innerArc = d3.arc()
+      .outerRadius(radius -8)
+      .innerRadius(145 );
 
 		var pie = d3.pie()
 	    .sort(null)
@@ -41,6 +59,17 @@
       	return d.data.color;
       });
 
+    var f = svg.selectAll(".innerArc")
+      .data(pie(innerData))
+      .enter().append("g");    
+
+
+    f.append("path")
+      .attr("d", innerArc)
+      .style("fill", function(d,i) {
+        return d.data.color;
+      });
+ ;
 
 
     function numberWithPeriod(x) {
@@ -67,3 +96,17 @@ var legend = d3.select("#legend")
      .html(function(d,i) {
           return "<h2 style='color:" + d.data.color + "'>" + d.data.name + "</h2>" + "<div class='datum'>" + "<span class='percentage'>" +  d.data.percentage + "%" + "</span>" + " " + "<span class='count'>" + numberWithPeriod(d.data.count) + "€" + "</span><div>";
       },0,'60px');
+
+
+
+
+d3.nest().key(function(d){
+    return d.name; })
+.rollup(function(leaves){
+    return d3.sum(leaves, function(d){
+        return d.count;
+    });
+}).entries(data)
+.map(function(d){
+    return { Names: d.key, Count: d.values};
+});
