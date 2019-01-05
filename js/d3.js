@@ -1,17 +1,21 @@
     var data = [
-      {name: 'cats', count: 30000, percentage: 60, color: '#000000'},
-      {name: 'dogs', count: 20000, percentage: 40, color: '#f8b70a'},
+      {name: 'smartphone', count: 80000, percentage: 40, color: '#3c671b'},
+      {name: 'tablet', count: 120000, percentage: 60, color: '#8ad53f'},
+ 
+    //  {name: 'revenue', count: 200000, background}
+    ]; 
 
-    ];
-    var totalCount = 50000;		//calcuting total manually
-    
-    var width = 540,
-    height = 540,
-    radius = 200;
+    var totalCountName = "revenue"; //Total Count per each Chart
+    var totalCount = 20000;		//calculates total
+    var totalCountBG = "img/bgChart1.jpg";    //settingBG per each Chart
+
+    var width = 535,
+    height = 320,
+    radius = 146;
 
 		var arc = d3.arc()
-    	.outerRadius(radius - 10)
-    	.innerRadius(100);
+    	.outerRadius(radius -1)
+    	.innerRadius(160);
 
 		var pie = d3.pie()
 	    .sort(null)
@@ -19,11 +23,15 @@
 	        return d.count;
 	    });
 
-		var svg = d3.select('body').append("svg")
+		var svg = d3.select('#donutChart').append("svg")
 	    .attr("width", width)
 	    .attr("height", height)
+      .attr("class", "bgChart")
 	    .append("g")
 	    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+
+
 
     var g = svg.selectAll(".arc")
       .data(pie(data))
@@ -35,24 +43,37 @@
       	return d.data.color;
       });
 
+
     g.append("text")
-    	.attr("transform", function(d) {
-        var _d = arc.centroid(d);
-        _d[0] *= 1.5;	//multiply by a constant factor
-        _d[1] *= 1.5;	//multiply by a constant factor
-        return "translate(" + _d + ")";
-      })
-      .attr("dy", ".50em")
-      .style("text-anchor", "middle")
-      .text(function(d) {
-        if(d.data.percentage < 8) {
-          return '';
-        }
-        //return d.data.percentage + '%';
-      });
-        
+     .attr("text-anchor", "middle")
+     .attr('color','#a3a3a3')
+     .attr('class','centerTitle')
+     .attr('y', -35)
+     .html(function(){
+            return (totalCountName)
+          });
+
+
     g.append("text")
 	   .attr("text-anchor", "middle")
-		 .attr('font-size', '4em')
-		 .attr('y', 20)
-	   .text(totalCount);
+		 .attr('font-size', '2em')
+		 .attr('y', 18)
+     .attr("class","totalPie")
+	   .text(function(){
+            return numberWithPeriod(totalCount) +"€";
+        },0,'30px');
+
+    function numberWithPeriod(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+
+var legend = d3.select("#legend")
+     .selectAll("div")
+     .data(pie(data))
+     .enter()
+     .append("div")
+     .attr("class","bottom-info")
+     .html(function(d,i) {
+          return "<h2 style='color:" + d.data.color + "'>" + d.data.name + "</h2>" + "<div class='datum'>" + "<span class='percentage'>" +  d.data.percentage + "%" + "</span>" + " " + "<span class='count'>" + numberWithPeriod(d.data.count) + "€" + "</span><div>";
+      },0,'60px');

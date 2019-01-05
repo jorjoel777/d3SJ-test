@@ -6,4 +6,105 @@ right:0;
 bottom:0;
 left:0; 
 text-align: center; 
+font-family: sans-serif,helvetica, arial;
+}
+
+h2{    
+	font-size: 26px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#charts{
+
+    width: 535px;
+    height: 425px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#donutChart{
+   height:320px;
+}
+
+.bottom-info {
+    width: 50%;
+    bottom: 0;
+
+}
+
+.bottom-info:nth(2){
+    float: right;
+}
+.bottom-info:nth(1){
+    float: left;
+}
+
+.centerTitle{
+  color:#a3a3a3;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+
+#legend{
+    width: 100%;
+    bottom: 0;
+    display: inline-flex;
+    border-bottom: 4px solid #e4e4e4;
+    padding-bottom: 20px;
+}
+.datum{
+    font-size: 26px;
+}
+.percentage{
+	color: #555555;
+    margin-right: 12px;
+}
+.bottom-info h2{
+	text-transform: capitalize;
+}
+.count{
+	color: #aaa;
+}
+
+
+#legend .bottom-info:nth-of-type(1) {
+   	-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+    overflow:visible;
+    text-align: right;
+  }
+
+ #legend .bottom-info:nth-of-type(2) {
+   	-webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    overflow:visible;
+    text-align: left;
+  }
+
+.centerTitle {      
+	color: grey;
+    text-transform: uppercase;
+    font-size: 34px;
+    font-stretch: condensed;
+    font-weight: bold;
+}
+
+.totalPie {
+    font-size: 50px;
+    font-stretch: semi-expanded;
+}
+
+.bgChart{
+    background: url(.././img/bgChart1.jpg);
+    background-position-x: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-clip: content-box;
 }
