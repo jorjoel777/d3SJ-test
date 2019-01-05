@@ -1,7 +1,7 @@
   d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(data) {
-    console.log(data[0]);
-  });    
-
+  console.log(data[0]);
+});
+  
     var data = [
       {name: 'smartphone', count: 80000, percentage: 40, color: '#3c671b'},
       {name: 'tablet', count: 120000, percentage: 60, color: '#8ad53f'},
