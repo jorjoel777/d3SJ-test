@@ -1,5 +1,5 @@
   d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(data) {
-    console.log(data[0],data[1]);
+    console.log(data[0]);
   });    
 
     var data = [
