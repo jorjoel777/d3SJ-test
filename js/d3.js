@@ -17,7 +17,7 @@
     var totalCountName = "revenue"; //Total Count per each Chart
     var totalCount = 0;    // equals 0 then we calculate total below
 
-    myData.forEach(function(d){
+    myD.forEach(function(d){
         totalCount+= d.count; // we calculate the sum of the value for d.count
     });
 
@@ -33,7 +33,7 @@
 
     var innerArc = d3.arc()
       .outerRadius(radius -8)
-      .innerRadius(145 );
+      .innerRadius(144 );
 
 		var pie = d3.pie()
 	    .sort(null)

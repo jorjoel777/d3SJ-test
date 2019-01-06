@@ -8,5 +8,13 @@
   "count": 120000, 
   "percentage": 60, 
   "color": "#8ad53f"
- }
+ },
+ {"count": 500, "percentage": 1, "color": "#a3a3a3"},
+ {"count": 50000, "percentage": 25, "color": "#fff"},
+ {"count": 500, "percentage": 1, "color": "#a3a3a3"},
+ {"count": 50000, "percentage": 25, "color": "#fff"},
+ {"count": 500, "percentage": 1, "color": "#a3a3a3"},
+ {"count": 50000, "percentage": 25, "color": "#fff"},
+ {"count": 500, "percentage": 1, "color": "#a3a3a3"},
+ {"count": 50000, "percentage": 25, "color": "#fff"}
 ]
