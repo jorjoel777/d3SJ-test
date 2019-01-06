@@ -1,14 +1,15 @@
 [
- {"name": "smartphone",
+{ 
+  {"name": "smartphone",
   "count": 80000, 
   "percentage": 40, 
   "color": "#3c671b"
  },
-
  {"name": "tablet", 
   "count": 120000, 
   "percentage": 60, 
   "color": "#8ad53f"
  }
+}
 ]
 

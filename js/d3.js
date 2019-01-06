@@ -1,14 +1,8 @@
-  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(data) {
-  console.log(data[0]);
-});
-  
-    var data = [
-      {name: 'smartphone', count: 80000, percentage: 40, color: '#3c671b'},
-      {name: 'tablet', count: 120000, percentage: 60, color: '#8ad53f'},
- 
-    //  {name: 'revenue', count: 200000, background}
-    ]; 
-    
+  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(myData) {
+
+
+    var data = [myData[0], myData[1]]; 
+    console.log(data);
     var innerData = [
       {count: 500, percentage: 1, color: '#a3a3a3'},
       {count: 50000, percentage: 25, color: '#fff'},
@@ -22,7 +16,7 @@
     var totalCountName = "revenue"; //Total Count per each Chart
     var totalCount = 0;    // equals 0 then we calculate total below
 
-    data.forEach(function(d){
+    myData.forEach(function(d){
         totalCount+= d.count; // we calculate the sum of the value for d.count
     });
 
@@ -103,15 +97,4 @@ var legend = d3.select("#legend")
       },0,'60px');
 
 
-
-
-d3.nest().key(function(d){
-    return d.name; })
-.rollup(function(leaves){
-    return d3.sum(leaves, function(d){
-        return d.count;
-    });
-}).entries(data)
-.map(function(d){
-    return { Names: d.key, Count: d.values};
-});
+  });
