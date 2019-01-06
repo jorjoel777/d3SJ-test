@@ -2,7 +2,7 @@
   console.log(myD[8], myD[9]);
 
 
-    var data = [myD[8], myD[9]] || [myD[10], myD[11]] || [myD[12], myD[13]]; 
+    var data = [myD[8], myD[9]] && [myD[10], myD[11]] && [myD[12], myD[13]]; 
   console.log(data);
     var innerData = [myD[0], myD[1], myD[2], myD[3], myD[4], myD[5], myD[6], myD[7]];
     var totalCountName = "revenue"; //Total Count per each Chart
@@ -32,23 +32,70 @@
 	        return d.count;
 	    });
 
-		var svg = d3.select('#donutChart').append("svg")
-	    .attr("width", width)
-	    .attr("height", height)
-      .attr("class", "bgChart")
-	    .append("g")
-	    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  //define svg (new one drawn for each pie chart in the data)
+    var svg = d3.select('body').selectAll("svg")
+      .data(data)
+      .enter()
+      .append("div")
+      .attr("class","dCharts")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+//this boolean  colours only the first value in the data
+    var first=true;
+
+
+//		var svg = d3.select('#donutChart').append("svg")
+//	    .attr("width", width)
+//	    .attr("height", height)
+//      .attr("class", "bgChart")
+//	    .append("g")
+//	    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+
+
+//draw pies in the individual svg's
+//svg.selectAll("path")
+//    .data(d3.pie().sort(null).value(function(d) { return d.number;}))
+//    .enter().append("path")
+//    .attr("d", arc)
+//    .attr("class",function(d) { return d.endAngle;})
+//    .style('stroke-width', 2)
+//    .style('stroke-linejoin','round')
+//    .style('stroke', 'lightgrey')
+//    .style("fill", function(d, i) {
+//      if(first==true){
+//        first=false;
+//        return color(d.data.label);//colour the first data entry (the value)
+//
+//      } else {
+//        first=true;
+//        return 'white';//colour the rest of the donut white
+//      }});
+
+
+
 
     var g = svg.selectAll(".arc")
-      .data(pie(data))
+      .data(pie(data)).sort(null).value(function(d) { return d.number;}))
       .enter().append("g");    
 
 
    	g.append("path")
     	.attr("d", arc)
       .style("fill", function(d,i) {
-      	return d.data.color;
-      });
+        if(first==true){
+          first=false;
+      	  return d.data.color;
+      } else {
+        first=true;
+        return 'white';//colour the rest of the donut white
+      }});
+
 
     var f = svg.selectAll(".innerArc")
       .data(pie(innerData))

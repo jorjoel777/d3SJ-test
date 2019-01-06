@@ -123,3 +123,6 @@ h2{
     background-repeat: no-repeat;
     background-clip: content-box;
 }
+.dCharts{
+    height: 320px;
+}
