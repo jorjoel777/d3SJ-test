@@ -1,8 +1,9 @@
-  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(myData) {
+  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(myD) {
+  console.log(myD[0], myD[1]);
 
-    var data = [myData[0], myData[1]]; 
-    console.log(data);
-    
+
+    var data = [myD[0], myD[1]]; 
+  console.log(data);
     var innerData = [
       {count: 500, percentage: 1, color: '#a3a3a3'},
       {count: 50000, percentage: 25, color: '#fff'},
