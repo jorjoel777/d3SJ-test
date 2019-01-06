@@ -26,5 +26,15 @@
   "count": 20000000, 
   "percentage": 40, 
   "color": "#75c7e0"
+ },
+ {"name": "smartphone",
+  "count": 120000000, 
+  "percentage": 20, 
+  "color": "#db5812"
+ },
+ {"name": "tablet", 
+  "count": 480000000, 
+  "percentage": 80, 
+  "color": "#fac600"
  }
 ]

@@ -2,7 +2,7 @@
   console.log(myD[8], myD[9]);
 
 
-    var data = [myD[8], myD[9]]; 
+    var data = [myD[8], myD[9]] || [myD[10], myD[11]]; 
   console.log(data);
     var innerData = [myD[0], myD[1], myD[2], myD[3], myD[4], myD[5], myD[6], myD[7]];
     var totalCountName = "revenue"; //Total Count per each Chart
