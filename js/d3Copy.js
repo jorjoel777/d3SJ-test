@@ -14,14 +14,11 @@
     my_data = data[0]
     innerarc = data[1]
 
-
-
-  console.log(data);
-    var innerData = [myD[0], myD[1], myD[2], myD[3], myD[4], myD[5], myD[6], myD[7]];
+    var innerData = [innerarc];
     var totalCountName = "revenue"; //Total Count per each Chart
     var totalCount = 0;    // equals 0 then we calculate total below
 
-    myD.forEach(function(d){
+    my_data.forEach(function(d){
         totalCount+= d.count; // we calculate the sum of the value for d.count
     });
 
@@ -47,12 +44,9 @@
 
 
   //define svg (new one drawn for each pie chart in the data)
-    var svg = d3.select('body').selectAll("svg")
-      .data(data)
-      .enter()
-      .append("div")
-      .attr("class","dCharts")
-      .append("svg")
+    var svg = d3.select("body").selectAll("svg")
+      .data(my_data)
+      .enter().append("svg")
       .attr("width", width)
       .attr("height", height)
       .append("g")
@@ -62,40 +56,9 @@
     var first=true;
 
 
-//		var svg = d3.select('#donutChart').append("svg")
-//	    .attr("width", width)
-//	    .attr("height", height)
-//      .attr("class", "bgChart")
-//	    .append("g")
-//	    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-
-
-//draw pies in the individual svg's
-//svg.selectAll("path")
-//    .data(d3.pie().sort(null).value(function(d) { return d.number;}))
-//    .enter().append("path")
-//    .attr("d", arc)
-//    .attr("class",function(d) { return d.endAngle;})
-//    .style('stroke-width', 2)
-//    .style('stroke-linejoin','round')
-//    .style('stroke', 'lightgrey')
-//    .style("fill", function(d, i) {
-//      if(first==true){
-//        first=false;
-//        return color(d.data.label);//colour the first data entry (the value)
-//
-//      } else {
-//        first=true;
-//        return 'white';//colour the rest of the donut white
-//      }});
-
-
-
-
     var g = svg.selectAll(".arc")
-      .data(pie(data)).sort(null).value(function(d) { return d.number;}))
-      .enter().append("g");    
+      .data(pie(my_data))
+      .enter().append("g");     
 
 
    	g.append("path")

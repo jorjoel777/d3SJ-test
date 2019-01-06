@@ -1,15 +1,15 @@
 {
   "ID:1": {
-    "label": "Data Point 1",
-    "value": 68
+    "label": "Revenue",
+    "value": 200000
   },
   "ID:2": {
-    "label": "Data Point 2",
-    "value": 50
+    "label": "Impresions",
+    "value": 50000000
   },
   "ID:3": {
-    "label": "Data Point 3",
-    "value": 40
+    "label": "Visits",
+    "value": 600000000
   },
   "national": {
     "label": "National Average",
