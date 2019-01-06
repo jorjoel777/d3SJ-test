@@ -140,3 +140,13 @@ h2{
 .dCharts{
     height: 320px;
 }
+
+@media screen and (max-width: 640px) {
+    .chart-wrapper {
+    height: 425px;
+    display: inline-flex;
+    width: 360px;
+    margin-top: 200px;
+    overflow-x: overlay;
+}
+}
