@@ -1,14 +1,16 @@
-  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(myD) {
+  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(error, myD) {
   console.log(myD[8], myD[9]);
+  if (error) throw error;
 
 
-    var data = [myD[8], myD[9]] || [myD[10], myD[11]] || [myD[12], myD[13]]; 
-  console.log(data);
-    var innerData = [myD[0], myD[1], myD[2], myD[3], myD[4], myD[5], myD[6], myD[7]];
+    var data = [myD[8], myD[9]]; 
+    var data1 = [myD[10], myD[11]];
+    var data3 = [myD[12], myD[13]];
+    var innerData = [myD.slice(0,7)];
     var totalCountName = "revenue"; //Total Count per each Chart
     var totalCount = 0;    // equals 0 then we calculate total below
 
-    myD.forEach(function(d){
+    myD.slice(8,9 || 10,11 || 12,13).forEach(function(d){
         totalCount+= d.count; // we calculate the sum of the value for d.count
     });
 
