@@ -141,12 +141,9 @@ h2{
     height: 320px;
 }
 
-@media screen and (max-width: 640px) {
-    .chart-wrapper {
-    height: 425px;
-    display: inline-flex;
-    width: 360px;
-    margin-top: 200px;
-    overflow-x: overlay;
+@media only screen and (max-width: 812px) and (min-width: 300px) {
+.chart-wrapper {
+    display: inline-block !important;
+    width: 360px !important;
 }
 }
