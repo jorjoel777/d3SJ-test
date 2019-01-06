@@ -1,15 +1,18 @@
 {
   "ID:1": {
     "label": "Revenue",
-    "value": 200000
+    "value": 40,
+    "count": 200000
   },
   "ID:2": {
     "label": "Impresions",
-    "value": 50000000
+    "value": 60,
+    "totalcount": 50000000
   },
   "ID:3": {
     "label": "Visits",
-    "value": 600000000
+    "value": 20,
+    "totalcount": 600000000
   },
   "national": {
     "label": "National Average",
