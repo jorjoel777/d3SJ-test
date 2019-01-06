@@ -1,8 +1,21 @@
-  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(myD) {
-  console.log(myD[8], myD[9]);
+  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts-Copy.json", function(error, root) {
+
+  if (error) throw error;
 
 
-    var data = [myD[8], myD[9]] && [myD[10], myD[11]] && [myD[12], myD[13]]; 
+    var my_data = [],
+    names = {},
+    data = [],
+    innerarc = 0;
+
+
+  //data returns pie chart ready data + national and state averages
+    data = get_data(root)
+    my_data = data[0]
+    innerarc = data[1]
+
+
+
   console.log(data);
     var innerData = [myD[0], myD[1], myD[2], myD[3], myD[4], myD[5], myD[6], myD[7]];
     var totalCountName = "revenue"; //Total Count per each Chart

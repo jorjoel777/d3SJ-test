@@ -1,0 +1,48 @@
+[
+  "ID:1":{
+    {"name": "smartphone",
+    "count": 80000, 
+    "percentage": 40, 
+    "color": "#3c671b"
+   },
+   {"name": "tablet", 
+    "count": 120000, 
+    "percentage": 60, 
+    "color": "#8ad53f"
+   }
+ },
+  "ID:2": {
+    {"name": "smartphone",
+    "count": 30000000, 
+    "percentage": 60, 
+    "color": "#2b525e"
+   },
+    {"name": "tablet", 
+    "count": 20000000, 
+    "percentage": 40, 
+    "color": "#75c7e0"
+   }
+ },
+ "ID:3"{
+  {"name": "smartphone",
+   "count": 120000000, 
+   "percentage": 20, 
+   "color": "#db5812"
+  },
+  {"name": "tablet", 
+   "count": 480000000, 
+   "percentage": 80, 
+   "color": "#fac600"
+  }
+},
+  "innerarc":{
+    {"count": 500, "percentage": 1, "color": "#a3a3a3"},
+    {"count": 50000, "percentage": 25, "color": "#fff"},
+    {"count": 500, "percentage": 1, "color": "#a3a3a3"},
+    {"count": 50000, "percentage": 25, "color": "#fff"},
+    {"count": 500, "percentage": 1, "color": "#a3a3a3"},
+    {"count": 50000, "percentage": 25, "color": "#fff"},
+    {"count": 500, "percentage": 1, "color": "#a3a3a3"},
+    {"count": 50000, "percentage": 25, "color": "#fff"}
+  }
+]
