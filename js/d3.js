@@ -1,19 +1,10 @@
   d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(myD) {
-  console.log(myD[0], myD[1]);
+  console.log(myD[8], myD[9]);
 
 
-    var data = [myD[0], myD[1]]; 
+    var data = [myD[8], myD[9]]; 
   console.log(data);
-    var innerData = [
-      {count: 500, percentage: 1, color: '#a3a3a3'},
-      {count: 50000, percentage: 25, color: '#fff'},
-      {count: 500, percentage: 1, color: '#a3a3a3'},
-      {count: 50000, percentage: 25, color: '#fff'},
-      {count: 500, percentage: 1, color: '#a3a3a3'},
-      {count: 50000, percentage: 25, color: '#fff'},
-      {count: 500, percentage: 1, color: '#a3a3a3'},
-      {count: 50000, percentage: 25, color: '#fff'},
-    ];
+    var innerData = [myD[0], myD[1], myD[2], myD[3], myD[4], myD[5], myD[6], myD[7], myD[8]    ];
     var totalCountName = "revenue"; //Total Count per each Chart
     var totalCount = 0;    // equals 0 then we calculate total below
 
