@@ -10,15 +10,14 @@ font-family: sans-serif,helvetica, arial;
 }
 
 h2{    
-	font-size: 26px;
-    margin-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 6px;
     margin-top: 5px;
 }
 
 #charts1, #charts2, #charts3{
-
-    width: 535px;
-    height: 425px;
+    width: 306px;
+    height: 241px;
     margin-left: 36px;
     margin-right: 54px;
 }
@@ -26,12 +25,12 @@ h2{
 .chart-wrapper{
     height: 425px;
     display: inline-flex;
-    width: 100%;
+    width: 1083px;
     margin-top: 200px;
 }
 
 #donutChart1,#donutChart2,#donutChart3{
-   height:320px;
+   height:183px;
 }
 
 .bottom-info {
@@ -47,20 +46,16 @@ h2{
     float: left;
 }
 
-.centerTitle, .centerTitle2, .centerTitle3 {
-  /*color:#a3a3a3;
-  text-transform: uppercase;
-  font-size: 26px;*/    
-    color: grey;
+.centerTitle, .centerTitle1, .centerTitle2, .centerTitle3 {
+    color: #a3a3a3;
     text-transform: uppercase;
-    font-size: 34px;
+    font-size: 21px;
     font-stretch: condensed;
     font-weight: bold;
     position: absolute;
     text-align: center;
-    width: 535px;
-    margin-top: -235px;
-
+    width: 306px;
+    margin-top: -133px;
 
 }
 
@@ -68,12 +63,12 @@ h2{
     width: 100%;
     bottom: 0;
     display: inline-flex;
-    border-bottom: 4px solid #e4e4e4;
-    padding-bottom: 20px;
+    border-bottom: 3px solid #e4e4e4;
+    padding-bottom: 13px;
 }
 
 .datum{
-    font-size: 26px;
+    font-size: 15px;
 }
 .percentage{
 	color: #555555;
@@ -107,27 +102,36 @@ h2{
     text-align: left;
   }
 
-.centerTitle {      
-	color: grey;
-    text-transform: uppercase;
-    font-size: 34px;
-    font-stretch: condensed;
-    font-weight: bold;
-}
+
 
 .totalPie1,.totalPie2,.totalPie3 {
-    font-size: 46px;
-    font-stretch: semi-expanded;
+    font-size: 25px;
+    font-stretch: expanded;
     position: absolute;
     text-align: center;
-    width: 535px;
+    width: 306px;
     display: block;
-    margin-top: -210px;
-    letter-spacing: -3px;
+    margin-top: -125px;
+    letter-spacing: -2px;
+    color: #3c3c3c;
 }
 
-.bgChart{
+.bgChart1{
     background: url(.././img/bgChart1.jpg);
+    background-position-x: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
+.bgChart2{
+    background: url(.././img/bgChart2.jpg);
+    background-position-x: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
+.bgChart3{
+    background: url(.././img/bgChart3.jpg);
     background-position-x: center;
     background-size: contain;
     background-repeat: no-repeat;

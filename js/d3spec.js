@@ -1,6 +1,8 @@
-  d3.json("https://raw.githubusercontent.com/jorjoel777/d3SJ-test/master/donutCharts.json", function(error, myD) {
- 
-  if (error) throw error;
+function donutChart() {
+  var that = {};
+
+  that.render = function() {
+
 
 
     var data1 = [myD[8], myD[9]]; 
@@ -15,7 +17,9 @@
     var totalCount1 = 0;    // equals 0 then we calculate total below
     var totalCount2 = 0;    // equals 0 then we calculate total below
     var totalCount3 = 0;    // equals 0 then we calculate total below
-    
+  
+
+
 
     myD.slice(8,10).forEach(function(d){
         totalCount1+= d.count; // we calculate the sum of the value for d.count
@@ -29,19 +33,25 @@
         totalCount3+= d.count; // we calculate the sum of the value for d.count
     });
 
-    var totalCountBG = "img/bgChart1.jpg";    //settingBG per each Chart
-//alert(totalCount);
-    var width = 535,
-    height = 320,
-    radius = 146;
+    var totalCountBG1 = "img/bgChart1.jpg";    //settingBG per each Chart
+    var totalCountBG2 = "img/bgChart2.jpg";    //settingBG per each Chart
+
+
+    function donutChart() {
+     
+     var that = {};
+
+    var width = 306,
+    height = 183,
+    radius = 80;
 
 		var arc = d3.arc()
     	.outerRadius(radius -1)
-    	.innerRadius(160 );
+    	.innerRadius(88 );
 
     var innerArc = d3.arc()
-      .outerRadius(radius -8)
-      .innerRadius(144 );
+      .outerRadius(radius -7)
+      .innerRadius(77 );
 
 		var pie = d3.pie()
 	    .sort(null)
@@ -49,10 +59,13 @@
 	        return d.count;
 	    });
 
+
+
+
 		var svg = d3.select('#donutChart1').append("svg")
 	    .attr("width", width)
 	    .attr("height", height)
-      .attr("class", "bgChart")
+      .attr("class", "bgChart1")
 	    .append("g")
 	    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -83,7 +96,7 @@
     var svg2 = d3.select('#donutChart2').append("svg")
       .attr("width", width)
       .attr("height", height)
-      .attr("class", "bgChart")
+      .attr("class", "bgChart2")
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -113,7 +126,7 @@
     var svg3 = d3.select('#donutChart3').append("svg")
       .attr("width", width)
       .attr("height", height)
-      .attr("class", "bgChart")
+      .attr("class", "bgChart3")
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -140,10 +153,15 @@
  ;
 
 
+
     function numberWithPeriod(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
+  };
+
+  return that;
+}
 
 var totalCenter = d3.select('#donutChart'+dataIndex)
      .append("div")
@@ -208,6 +226,8 @@ var legend = d3.select("#legend3")
       },0,'60px');
 
 
-      
 
-  });
+  };
+
+  return that;
+}
