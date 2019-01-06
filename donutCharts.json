@@ -9,9 +9,7 @@
   "count": 120000, 
   "percentage": 60, 
   "color": "#8ad53f"
- }
-},
-{
+ },
     {"name": "smartphone", 
     "count": 30000000, 
     "percentage": 60, 
@@ -23,6 +21,5 @@
     "color": "#78c9e4"  
 }
 
-}
 ]
 
