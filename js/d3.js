@@ -4,7 +4,7 @@
 
     var data = [myD[8], myD[9]]; 
   console.log(data);
-    var innerData = [myD[0], myD[1], myD[2], myD[3], myD[4], myD[5], myD[6], myD[7], myD[8]    ];
+    var innerData = [myD[0], myD[1], myD[2], myD[3], myD[4], myD[5], myD[6], myD[7]];
     var totalCountName = "revenue"; //Total Count per each Chart
     var totalCount = 0;    // equals 0 then we calculate total below
 
